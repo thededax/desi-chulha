@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desi Chulha | Authentic Earthen Clay-Oven Indian Kitchen & Dining</title>
+    <meta
+      name="description"
+      content="Desi Chulha brings the authentic aroma of wood-fired clay ovens, hand-ground heirloom spices, smoky tandoori platters, and slow-simmered handi curries to Bhagalpur. Dine-in, takeaway & express delivery."
+    />
+    <meta name="theme-color" content="#190C06" />
+
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="restaurant.restaurant" />
+    <meta property="og:title" content="Desi Chulha | Modern Earthen Indian Kitchen" />
+    <meta
+      property="og:description"
+      content="Authentic wood-fired clay oven dining, slow-cooked dal, smoked butter chicken, and fresh tandoori breads in Bhagalpur."
+    />
+    <meta property="og:url" content="https://desichulha.netlify.app/" />
+    <meta property="og:site_name" content="Desi Chulha" />
+
+    <!-- Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600;1,700&family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Restaurant Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Desi Chulha",
+        "image": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=2574&auto=format&fit=crop",
+        "@id": "https://desichulha.netlify.app",
+        "url": "https://desichulha.netlify.app",
+        "telephone": "+919876543210",
+        "priceRange": "₹₹",
+        "servesCuisine": [
+          "North Indian",
+          "Tandoori",
+          "Mughlai",
+          "Indo-Chinese"
+        ],
+        "menu": "https://desichulha.netlify.app/menu",
+        "acceptsReservations": "True",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "RB Surya Prasad Rd, Chowk, Badi Khanjarpur",
+          "addressLocality": "Bhagalpur",
+          "addressRegion": "Bihar",
+          "postalCode": "812001",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "25.2425",
+          "longitude": "86.9842"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "11:00",
+            "closes": "23:00"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-[#190C06] text-[#F6F3EC] antialiased selection:bg-[#B84A1B] selection:text-[#FFFDF9] overflow-x-hidden">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
