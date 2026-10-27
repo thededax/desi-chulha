@@ -70,33 +70,33 @@ export function OrderDrawer() {
             aria-label="Order Tray"
           >
             {/* Header */}
-            <div className="p-4 sm:p-6 border-b border-[#B79754]/20 flex items-center justify-between bg-[#26140B] shrink-0">
-              <div className="flex items-center gap-2.5 sm:gap-3">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#B84A1B]/20 border border-[#B84A1B] flex items-center justify-center text-[#FAE88A] shrink-0">
+            <div className="p-3.5 sm:p-6 border-b border-[#B79754]/20 flex items-center justify-between bg-[#26140B] shrink-0">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#B84A1B]/20 border border-[#B84A1B] flex items-center justify-center text-[#FAE88A] shrink-0">
                   <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <h2 className="font-serif text-lg sm:text-xl font-bold tracking-wide text-[#F6F3EC]">
+                  <h2 className="font-serif text-base sm:text-xl font-bold tracking-wide text-[#F6F3EC]">
                     Your Order Tray
                   </h2>
-                  <p className="text-[11px] sm:text-xs text-[#D1C7B7] font-sans">
+                  <p className="text-[10px] sm:text-xs text-[#D1C7B7] font-sans">
                     {totalCount} {totalCount === 1 ? "item" : "items"} selected
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1.5 sm:gap-2">
                 {cartItems.length > 0 && (
                   <button
                     onClick={clearCart}
-                    className="text-[11px] sm:text-xs text-[#D1C7B7] hover:text-[#B84A1B] underline transition-colors px-1.5 py-1"
+                    className="text-[10px] sm:text-xs text-[#D1C7B7] hover:text-[#B84A1B] underline transition-colors px-1 py-0.5"
                   >
                     Clear All
                   </button>
                 )}
                 <button
                   onClick={closeCart}
-                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-[#F6F3EC] transition-colors"
+                  className="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-[#F6F3EC] transition-colors cursor-pointer"
                   aria-label="Close Order Tray"
                 >
                   <X className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -105,7 +105,7 @@ export function OrderDrawer() {
             </div>
 
             {/* Content Body */}
-            <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 sm:space-y-6">
+            <div className="flex-1 overflow-y-auto p-3.5 sm:p-6 space-y-3 sm:space-y-6">
               {cartItems.length === 0 ? (
                 <div className="h-full flex flex-col items-center justify-center text-center py-12 sm:py-16 px-4">
                   <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#26140B] border border-[#B79754]/30 flex items-center justify-center mb-4 sm:mb-6 text-[#B79754]">
@@ -255,7 +255,7 @@ export function OrderDrawer() {
 
             {/* Footer Summary & CTAs with Safe Area Padding */}
             {cartItems.length > 0 && (
-              <div className="p-4 sm:p-6 pb-[max(1rem,env(safe-area-inset-bottom))] border-t border-[#B79754]/20 bg-[#26140B] space-y-3 sm:space-y-4 shrink-0">
+              <div className="p-3.5 sm:p-6 pb-[max(0.65rem,env(safe-area-inset-bottom))] border-t border-[#B79754]/20 bg-[#26140B] space-y-2.5 sm:space-y-4 shrink-0">
                 <div className="space-y-1 text-xs text-[#D1C7B7]">
                   <div className="flex justify-between">
                     <span>Items Subtotal</span>

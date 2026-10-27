@@ -12,13 +12,13 @@ export function Loader({ onComplete }: { onComplete: () => void }) {
           clearInterval(interval);
           return 100;
         }
-        return prev + Math.random() * 20 + 8;
+        return prev + Math.random() * 28 + 14;
       });
-    }, 90);
+    }, 60);
 
     const timer = setTimeout(() => {
       onComplete();
-    }, 2200);
+    }, 1100);
 
     return () => {
       clearTimeout(timer);
@@ -34,7 +34,7 @@ export function Loader({ onComplete }: { onComplete: () => void }) {
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#190C06] overflow-hidden"
       initial={{ opacity: 1 }}
       animate={{ opacity: 0 }}
-      transition={{ duration: 0.5, delay: 1.9, ease: "easeInOut" }}
+      transition={{ duration: 0.35, delay: 0.85, ease: "easeInOut" }}
     >
       {/* Background Glow */}
       <motion.div

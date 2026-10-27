@@ -24,7 +24,7 @@ export function Hero() {
   };
 
   return (
-    <section className="relative bg-[#190C06] text-[#F6F3EC] overflow-hidden min-h-[580px] sm:min-h-[620px] lg:min-h-[680px] flex items-center border-b border-[#B79754]/20">
+    <section className="relative bg-[#190C06] text-[#F6F3EC] overflow-hidden min-h-0 sm:min-h-[520px] lg:min-h-[640px] flex items-center border-b border-[#B79754]/20">
       {/* 1. Immersive Culinary Photography Backdrop */}
       <div className="absolute inset-0 z-0">
         <img
@@ -41,10 +41,10 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#190C06]/85 via-transparent to-[#190C06] md:hidden" />
 
         {/* Top edge seamless fade with Navbar */}
-        <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-[#190C06] to-transparent pointer-events-none" />
+        <div className="absolute top-0 inset-x-0 h-16 sm:h-24 bg-gradient-to-b from-[#190C06] to-transparent pointer-events-none" />
 
         {/* Bottom edge seamless fade with adjacent PopularDishes section */}
-        <div className="absolute bottom-0 inset-x-0 h-28 sm:h-36 bg-gradient-to-t from-[#190C06] via-[#190C06]/80 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 inset-x-0 h-20 sm:h-36 bg-gradient-to-t from-[#190C06] via-[#190C06]/80 to-transparent pointer-events-none" />
 
         {/* Subtle warm ember radial warmth */}
         <div
@@ -56,8 +56,8 @@ export function Hero() {
       </div>
 
       {/* 2. Hero Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 sm:py-20 lg:py-24 w-full">
-        <div className="grid lg:grid-cols-12 gap-8 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-6 pb-10 sm:pt-14 sm:pb-16 lg:py-20 w-full">
+        <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-center">
           
           {/* Left Column (Negative Space): Minimal, Punchy Headlines & CTAs */}
           <div className="lg:col-span-7 xl:col-span-6 flex flex-col items-start text-left max-w-2xl">
@@ -66,9 +66,9 @@ export function Hero() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#26140B]/90 border border-[#B79754]/40 text-[#FAE88A] text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-4 sm:mb-5 shadow-lg backdrop-blur-md"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-[#26140B]/90 border border-[#B79754]/40 text-[#FAE88A] text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-5 shadow-lg backdrop-blur-md"
             >
-              <Flame className="w-3.5 h-3.5 text-[#B84A1B]" />
+              <Flame className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#B84A1B]" />
               <span>Authentic Wood-Fired Clay Oven</span>
             </motion.div>
 
@@ -77,7 +77,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-[4.15rem] leading-[1.06] tracking-tight text-[#F6F3EC] mb-4 sm:mb-5 drop-shadow-md"
+              className="font-serif font-bold text-2xl sm:text-4xl md:text-5xl lg:text-[4.15rem] leading-[1.1] tracking-tight text-[#F6F3EC] mb-2.5 sm:mb-5 drop-shadow-md"
             >
               Pure Heritage.{" "}
               <span className="text-[#FAE88A] italic font-normal block sm:inline">
@@ -91,7 +91,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-[#D1C7B7] text-sm sm:text-base md:text-lg font-sans leading-relaxed max-w-lg mb-6 sm:mb-8 drop-shadow-sm"
+              className="text-[#D1C7B7] text-xs sm:text-base md:text-lg font-sans leading-relaxed max-w-lg mb-4 sm:mb-8 drop-shadow-sm"
             >
               Hand-pounded heirloom spices, slow-fired handi curries, and smoky tandoori breads — 
               crafted with traditional patience in Bhagalpur.
@@ -102,19 +102,19 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto mb-8 sm:mb-10"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4 w-full sm:w-auto mb-5 sm:mb-10"
             >
               <Link
                 to="/menu"
-                className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 bg-[#B84A1B] hover:bg-[#9A3B12] text-[#FFFDF9] font-sans font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 shadow-xl hover:shadow-[0_0_25px_rgba(184,74,27,0.55)] cursor-pointer text-center rounded-sm"
+                className="inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3 sm:py-4 bg-[#B84A1B] hover:bg-[#9A3B12] text-[#FFFDF9] font-sans font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 shadow-xl hover:shadow-[0_0_25px_rgba(184,74,27,0.55)] cursor-pointer text-center rounded-sm"
               >
                 <span>Explore Menu & Order</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </Link>
 
               <a
-                href="#reserve-table"
-                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 sm:py-4 bg-[#26140B]/80 hover:bg-[#B79754]/20 text-[#F6F3EC] border border-[#B79754] font-sans font-semibold text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 cursor-pointer text-center backdrop-blur-sm rounded-sm"
+                href="/#reserve-table"
+                className="inline-flex items-center justify-center gap-2 px-5 sm:px-7 py-3 sm:py-4 bg-[#26140B]/80 hover:bg-[#B79754]/20 text-[#F6F3EC] border border-[#B79754] font-sans font-semibold text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 cursor-pointer text-center backdrop-blur-sm rounded-sm"
               >
                 <span>Reserve a Table</span>
               </a>
@@ -125,34 +125,34 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="grid grid-cols-3 gap-2 sm:gap-4 pt-5 sm:pt-6 border-t border-[#B79754]/25 w-full max-w-lg"
+              className="grid grid-cols-3 gap-1.5 sm:gap-4 pt-3.5 sm:pt-6 border-t border-[#B79754]/25 w-full max-w-lg"
             >
               <div className="flex flex-col gap-0.5">
-                <span className="flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs font-bold text-[#FAE88A]">
-                  <Flame className="w-3.5 h-3.5 text-[#B84A1B] shrink-0" />
+                <span className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs font-bold text-[#FAE88A]">
+                  <Flame className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#B84A1B] shrink-0" />
                   <span>Wood Coals</span>
                 </span>
-                <span className="text-[10px] sm:text-[11px] text-[#D1C7B7]/80 leading-tight">
+                <span className="text-[9px] sm:text-[11px] text-[#D1C7B7]/80 leading-tight">
                   Clay Tandoors
                 </span>
               </div>
 
-              <div className="flex flex-col gap-0.5 border-x border-[#B79754]/25 px-2 sm:px-4">
-                <span className="flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs font-bold text-[#FAE88A]">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#15803D] shrink-0" />
+              <div className="flex flex-col gap-0.5 border-x border-[#B79754]/25 px-1.5 sm:px-4">
+                <span className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs font-bold text-[#FAE88A]">
+                  <ShieldCheck className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#15803D] shrink-0" />
                   <span>Pure Zones</span>
                 </span>
-                <span className="text-[10px] sm:text-[11px] text-[#D1C7B7]/80 leading-tight">
+                <span className="text-[9px] sm:text-[11px] text-[#D1C7B7]/80 leading-tight">
                   Veg & Non-Veg
                 </span>
               </div>
 
               <div className="flex flex-col gap-0.5 pl-1">
-                <span className="flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs font-bold text-[#FAE88A]">
-                  <Clock className="w-3.5 h-3.5 text-[#B79754] shrink-0" />
+                <span className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs font-bold text-[#FAE88A]">
+                  <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#B79754] shrink-0" />
                   <span>Fresh & Fast</span>
                 </span>
-                <span className="text-[10px] sm:text-[11px] text-[#D1C7B7]/80 leading-tight">
+                <span className="text-[9px] sm:text-[11px] text-[#D1C7B7]/80 leading-tight">
                   Direct Delivery
                 </span>
               </div>

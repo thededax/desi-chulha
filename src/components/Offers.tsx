@@ -48,15 +48,15 @@ export function Offers() {
   ];
 
   return (
-    <section className="py-16 sm:py-24 md:py-32 bg-[#26140B] text-[#F6F3EC] relative border-b border-[#B79754]/20">
+    <section className="py-10 sm:py-16 md:py-24 bg-[#26140B] text-[#F6F3EC] relative border-b border-[#B79754]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#FAE88A] mb-2 sm:mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-14">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#FAE88A] mb-1.5 sm:mb-3">
             <Sparkles className="w-3.5 h-3.5 text-[#B79754]" />
             <span>Curated Dining Experiences</span>
           </div>
-          <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#F6F3EC] mb-3 sm:mb-4">
+          <h2 className="font-serif text-xl sm:text-3xl md:text-5xl font-bold tracking-tight text-[#F6F3EC] mb-2 sm:mb-4">
             Curated <span className="italic font-normal text-[#FAE88A]">Family Feasts & Thalis</span>
           </h2>
           <p className="text-xs sm:text-sm md:text-base text-[#D1C7B7] leading-relaxed max-w-xl mx-auto">
@@ -65,7 +65,7 @@ export function Offers() {
         </div>
 
         {/* 3-Column Promotions Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6 md:gap-8">
           {promotions.map((promo, i) => (
             <motion.div
               key={promo.title}
@@ -73,27 +73,27 @@ export function Offers() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="bg-[#190C06] border border-[#B79754]/30 rounded-2xl p-5 sm:p-7 flex flex-col justify-between hover:border-[#B79754] transition-all duration-300 shadow-xl group"
+              className="bg-[#190C06] border border-[#B79754]/30 rounded-xl sm:rounded-2xl p-4 sm:p-7 flex flex-col justify-between hover:border-[#B79754] transition-all duration-300 shadow-xl group"
             >
               <div>
                 {/* Badge */}
-                <div className="inline-block text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-[#FAE88A] bg-[#26140B] px-2.5 sm:px-3 py-1 rounded-full border border-[#B79754]/40 mb-3 sm:mb-4">
+                <div className="inline-block text-[8px] sm:text-[10px] font-bold uppercase tracking-widest text-[#FAE88A] bg-[#26140B] px-2 sm:px-3 py-0.5 sm:py-1 rounded-full border border-[#B79754]/40 mb-2 sm:mb-4">
                   {promo.badge}
                 </div>
 
                 {/* Title */}
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#F6F3EC] group-hover:text-[#FAE88A] transition-colors mb-2">
+                <h3 className="font-serif text-lg sm:text-2xl font-bold text-[#F6F3EC] group-hover:text-[#FAE88A] transition-colors mb-1 sm:mb-2">
                   {promo.title}
                 </h3>
 
-                <p className="text-xs text-[#D1C7B7] leading-relaxed mb-5 sm:mb-6">
+                <p className="text-[11px] sm:text-xs text-[#D1C7B7] leading-relaxed mb-3 sm:mb-6">
                   {promo.subtitle}
                 </p>
 
                 {/* Feature bullets */}
-                <ul className="space-y-1.5 sm:space-y-2 mb-6 sm:mb-8 text-[11px] sm:text-xs text-[#D1C7B7]/90 border-t border-[#B79754]/20 pt-3.5 sm:pt-4">
+                <ul className="space-y-1 sm:space-y-2 mb-3.5 sm:mb-6 text-[10px] sm:text-xs text-[#D1C7B7]/90 border-t border-[#B79754]/20 pt-2.5 sm:pt-4">
                   {promo.features.map((feat, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
+                    <li key={idx} className="flex items-start gap-1.5 sm:gap-2">
                       <span className="text-[#B84A1B] font-bold">✦</span>
                       <span>{feat}</span>
                     </li>
@@ -102,19 +102,19 @@ export function Offers() {
               </div>
 
               {/* Price & Action */}
-              <div className="border-t border-[#B79754]/20 pt-4 sm:pt-5 flex items-center justify-between">
+              <div className="border-t border-[#B79754]/20 pt-3 sm:pt-5 flex items-center justify-between">
                 <div>
-                  <span className="font-mono text-xl sm:text-2xl font-bold text-[#FAE88A]">
+                  <span className="font-mono text-lg sm:text-2xl font-bold text-[#FAE88A]">
                     {promo.price}
                   </span>
-                  <span className="text-[10px] text-[#D1C7B7] block font-sans">
+                  <span className="text-[9px] sm:text-[10px] text-[#D1C7B7] block font-sans">
                     {promo.priceSuffix}
                   </span>
                 </div>
 
                 <a
-                  href="#reserve-table"
-                  className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 sm:py-2.5 bg-[#B84A1B] hover:bg-[#9A3B12] text-[#FFFDF9] text-xs font-bold uppercase tracking-wider rounded transition-colors shadow"
+                  href="/#reserve-table"
+                  className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2.5 bg-[#B84A1B] hover:bg-[#9A3B12] text-[#FFFDF9] text-xs font-bold uppercase tracking-wider rounded transition-colors shadow"
                 >
                   <span>{promo.cta}</span>
                   <ArrowRight className="w-3.5 h-3.5" />

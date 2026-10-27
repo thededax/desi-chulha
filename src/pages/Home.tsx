@@ -21,16 +21,16 @@ export function Home() {
       <WhyChooseUs />
 
       {/* 4. Interactive Full Menu Explorer on warm textured parchment */}
-      <section className="bg-parchment-textured py-16 md:py-24 border-b border-[#B79754]/20" id="full-menu">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 text-center mb-8">
-          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#B84A1B] mb-2">
+      <section className="bg-parchment-textured py-10 sm:py-16 md:py-24 border-b border-[#B79754]/20" id="full-menu">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 text-center mb-4 sm:mb-8">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#B84A1B] mb-1.5 sm:mb-2">
             <Flame className="w-3.5 h-3.5 text-[#B84A1B]" />
             <span>Interactive Culinary Explorer</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#190C06]">
+          <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#190C06]">
             Explore the <span className="italic font-normal text-[#B84A1B]">Full Menu</span>
           </h2>
-          <p className="text-xs sm:text-sm text-[#58483E] max-w-xl mx-auto mt-2">
+          <p className="text-xs sm:text-sm text-[#58483E] max-w-xl mx-auto mt-1 sm:mt-2">
             Filter instantly by Pure Veg or Non-Veg, search your favorite curry, and build your order tray.
           </p>
         </div>

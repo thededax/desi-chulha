@@ -67,15 +67,15 @@ export function TableReservationHub() {
   };
 
   return (
-    <section id="reserve-table" className="py-16 sm:py-24 md:py-32 bg-parchment-textured text-[#190C06] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+    <section id="reserve-table" className="py-10 sm:py-16 md:py-24 bg-parchment-textured text-[#190C06] relative">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#B84A1B] mb-2 sm:mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-14">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#B84A1B] mb-1.5 sm:mb-3">
             <Users className="w-3.5 h-3.5 text-[#B84A1B]" />
             <span>Family Dining & Hospitality</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#190C06] mb-3 sm:mb-4">
+          <h2 className="font-serif text-xl sm:text-3xl md:text-5xl font-bold tracking-tight text-[#190C06] mb-2 sm:mb-4">
             Reserve a Table at the <span className="italic font-normal text-[#B84A1B]">Hearth</span>
           </h2>
           <p className="text-xs sm:text-sm md:text-base text-[#58483E] leading-relaxed max-w-xl mx-auto">
@@ -84,51 +84,51 @@ export function TableReservationHub() {
         </div>
 
         {/* 6/6 Split Hub */}
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-12 gap-6 sm:gap-10 lg:gap-16 items-start">
           
           {/* Left 6 Columns: Reservation Form */}
-          <div className="lg:col-span-7 bg-[#FFFDF9] border border-[#B79754]/30 rounded-2xl p-4 sm:p-6 md:p-10 shadow-lg">
+          <div className="lg:col-span-7 bg-[#FFFDF9] border border-[#B79754]/30 rounded-xl sm:rounded-2xl p-3.5 sm:p-6 md:p-10 shadow-lg">
             {isSubmitted ? (
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="text-center py-8 sm:py-10 space-y-4 sm:space-y-5"
+                className="text-center py-6 sm:py-10 space-y-3 sm:space-y-5"
               >
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#15803D]/15 border border-[#15803D] flex items-center justify-center text-[#15803D] mx-auto">
-                  <CheckCircle2 className="w-7 h-7 sm:w-8 sm:h-8" />
+                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#15803D]/15 border border-[#15803D] flex items-center justify-center text-[#15803D] mx-auto">
+                  <CheckCircle2 className="w-6 h-6 sm:w-8 sm:h-8" />
                 </div>
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#190C06]">
+                <h3 className="font-serif text-lg sm:text-2xl font-bold text-[#190C06]">
                   Table Request Confirmed!
                 </h3>
                 <p className="text-xs sm:text-sm text-[#58483E] max-w-md mx-auto leading-relaxed">
                   Thank you, <strong className="text-[#190C06]">{name}</strong>. We have allocated seating for <strong>{guests} guests</strong> on <strong>{date}</strong> ({serviceSlot} slot around {time}).
                 </p>
-                <div className="bg-[#F6F3EC] p-3.5 sm:p-4 rounded-xl border border-[#B79754]/30 text-xs text-[#58483E] max-w-sm mx-auto text-left space-y-1">
+                <div className="bg-[#F6F3EC] p-3 sm:p-4 rounded-xl border border-[#B79754]/30 text-xs text-[#58483E] max-w-sm mx-auto text-left space-y-1">
                   <p><strong>Hotline:</strong> +91 98765 43210</p>
                   <p><strong>Location:</strong> Chowk, Badi Khanjarpur, Bhagalpur</p>
                   <p><strong>Preferences:</strong> {preference.join(", ") || "Standard Seating"}</p>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 justify-center pt-2">
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center pt-2">
                   <button
                     onClick={handleWhatsAppBooking}
-                    className="px-5 py-3 bg-[#15803D] hover:bg-[#166534] text-white text-xs font-bold uppercase tracking-wider rounded transition-colors flex items-center justify-center gap-2"
+                    className="px-4 sm:px-5 py-2.5 sm:py-3 bg-[#15803D] hover:bg-[#166534] text-white text-xs font-bold uppercase tracking-wider rounded transition-colors flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <MessageCircle className="w-4 h-4" />
                     <span>Confirm on WhatsApp</span>
                   </button>
                   <button
                     onClick={() => setIsSubmitted(false)}
-                    className="px-5 py-3 bg-[#190C06] text-[#FFFDF9] text-xs font-bold uppercase tracking-wider rounded transition-colors"
+                    className="px-4 sm:px-5 py-2.5 sm:py-3 bg-[#190C06] text-[#FFFDF9] text-xs font-bold uppercase tracking-wider rounded transition-colors cursor-pointer"
                   >
                     Make Another Booking
                   </button>
                 </div>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-5">
                 {/* Guest Count Pills */}
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#58483E] mb-2">
+                  <label className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#58483E] mb-1.5 sm:mb-2">
                     1. Select Number of Guests
                   </label>
                   <div className="grid grid-cols-4 gap-1.5 sm:gap-2">
@@ -137,7 +137,7 @@ export function TableReservationHub() {
                         key={opt.val}
                         type="button"
                         onClick={() => setGuests(opt.val)}
-                        className={`py-2 sm:py-2.5 px-1 text-[11px] sm:text-xs font-bold rounded-lg transition-all cursor-pointer text-center truncate ${
+                        className={`py-1.5 sm:py-2.5 px-1 text-[10px] sm:text-xs font-bold rounded-lg transition-all cursor-pointer text-center truncate ${
                           guests === opt.val
                             ? "bg-[#B84A1B] text-[#FFFDF9] shadow"
                             : "bg-[#F6F3EC] text-[#58483E] border border-[#B79754]/30 hover:border-[#B84A1B]"
@@ -151,7 +151,7 @@ export function TableReservationHub() {
 
                 {/* Service Slot Switcher */}
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#58483E] mb-2">
+                  <label className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#58483E] mb-1.5 sm:mb-2">
                     2. Service Slot
                   </label>
                   <div className="grid grid-cols-2 gap-2 sm:gap-3">
@@ -161,7 +161,7 @@ export function TableReservationHub() {
                         setServiceSlot("Lunch");
                         setTime("13:00");
                       }}
-                      className={`p-2.5 sm:p-3 rounded-lg border text-left transition-all cursor-pointer ${
+                      className={`p-2 sm:p-3 rounded-lg border text-left transition-all cursor-pointer ${
                         serviceSlot === "Lunch"
                           ? "bg-[#26140B] text-[#FAE88A] border-[#B79754] shadow"
                           : "bg-[#F6F3EC] text-[#58483E] border-[#B79754]/30 hover:border-[#190C06]"
@@ -181,7 +181,7 @@ export function TableReservationHub() {
                         setServiceSlot("Dinner");
                         setTime("19:30");
                       }}
-                      className={`p-2.5 sm:p-3 rounded-lg border text-left transition-all cursor-pointer ${
+                      className={`p-2 sm:p-3 rounded-lg border text-left transition-all cursor-pointer ${
                         serviceSlot === "Dinner"
                           ? "bg-[#26140B] text-[#FAE88A] border-[#B79754] shadow"
                           : "bg-[#F6F3EC] text-[#58483E] border-[#B79754]/30 hover:border-[#190C06]"
@@ -198,9 +198,9 @@ export function TableReservationHub() {
                 </div>
 
                 {/* Date & Time Row */}
-                <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
+                <div className="grid sm:grid-cols-2 gap-2.5 sm:gap-4">
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#58483E] mb-1.5">
+                    <label className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#58483E] mb-1">
                       Reservation Date
                     </label>
                     <input
@@ -208,12 +208,12 @@ export function TableReservationHub() {
                       required
                       value={date}
                       onChange={(e) => setDate(e.target.value)}
-                      className="w-full bg-[#F6F3EC] border border-[#B79754]/40 rounded-lg p-2.5 text-base sm:text-xs md:text-sm text-[#190C06] focus:outline-none focus:border-[#B84A1B]"
+                      className="w-full bg-[#F6F3EC] border border-[#B79754]/40 rounded-lg p-2 sm:p-2.5 text-base sm:text-xs md:text-sm text-[#190C06] focus:outline-none focus:border-[#B84A1B]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#58483E] mb-1.5">
+                    <label className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#58483E] mb-1">
                       Preferred Time
                     </label>
                     <input
@@ -221,15 +221,15 @@ export function TableReservationHub() {
                       required
                       value={time}
                       onChange={(e) => setTime(e.target.value)}
-                      className="w-full bg-[#F6F3EC] border border-[#B79754]/40 rounded-lg p-2.5 text-base sm:text-xs md:text-sm text-[#190C06] focus:outline-none focus:border-[#B84A1B]"
+                      className="w-full bg-[#F6F3EC] border border-[#B79754]/40 rounded-lg p-2 sm:p-2.5 text-base sm:text-xs md:text-sm text-[#190C06] focus:outline-none focus:border-[#B84A1B]"
                     />
                   </div>
                 </div>
 
                 {/* Contact Info */}
-                <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
+                <div className="grid sm:grid-cols-2 gap-2.5 sm:gap-4">
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#58483E] mb-1.5">
+                    <label className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#58483E] mb-1">
                       Your Full Name *
                     </label>
                     <input
@@ -238,12 +238,12 @@ export function TableReservationHub() {
                       placeholder="e.g. Ramesh Kumar"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full bg-[#F6F3EC] border border-[#B79754]/40 rounded-lg p-2.5 text-base sm:text-xs md:text-sm text-[#190C06] focus:outline-none focus:border-[#B84A1B]"
+                      className="w-full bg-[#F6F3EC] border border-[#B79754]/40 rounded-lg p-2 sm:p-2.5 text-base sm:text-xs md:text-sm text-[#190C06] focus:outline-none focus:border-[#B84A1B]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#58483E] mb-1.5">
+                    <label className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#58483E] mb-1">
                       Mobile Number *
                     </label>
                     <input
@@ -252,23 +252,23 @@ export function TableReservationHub() {
                       placeholder="e.g. +91 98765 43210"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="w-full bg-[#F6F3EC] border border-[#B79754]/40 rounded-lg p-2.5 text-base sm:text-xs md:text-sm text-[#190C06] focus:outline-none focus:border-[#B84A1B]"
+                      className="w-full bg-[#F6F3EC] border border-[#B79754]/40 rounded-lg p-2 sm:p-2.5 text-base sm:text-xs md:text-sm text-[#190C06] focus:outline-none focus:border-[#B84A1B]"
                     />
                   </div>
                 </div>
 
                 {/* Special Requests Pills */}
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#58483E] mb-1.5">
+                  <label className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#58483E] mb-1">
                     Special Seating & Culinary Preferences
                   </label>
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  <div className="flex flex-wrap gap-1 sm:gap-2">
                     {preferenceTags.map((tag) => (
                       <button
                         key={tag}
                         type="button"
                         onClick={() => togglePreference(tag)}
-                        className={`text-[11px] sm:text-xs px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border transition-all cursor-pointer ${
+                        className={`text-[10px] sm:text-xs px-2 sm:px-3 py-1 sm:py-1.5 rounded-full border transition-all cursor-pointer ${
                           preference.includes(tag)
                             ? "bg-[#26140B] text-[#FAE88A] border-[#B79754]"
                             : "bg-[#F6F3EC] text-[#58483E] border-[#B79754]/30 hover:border-[#58483E]"
@@ -283,7 +283,7 @@ export function TableReservationHub() {
 
                 {/* Notes textarea */}
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#58483E] mb-1.5">
+                  <label className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#58483E] mb-1">
                     Additional Occasion Notes (Optional)
                   </label>
                   <textarea
@@ -291,22 +291,22 @@ export function TableReservationHub() {
                     placeholder="Allergies, birthday cakes, or special seating requirements..."
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
-                    className="w-full bg-[#F6F3EC] border border-[#B79754]/40 rounded-lg p-2.5 text-base sm:text-xs md:text-sm text-[#190C06] focus:outline-none focus:border-[#B84A1B] resize-none"
+                    className="w-full bg-[#F6F3EC] border border-[#B79754]/40 rounded-lg p-2 sm:p-2.5 text-base sm:text-xs md:text-sm text-[#190C06] focus:outline-none focus:border-[#B84A1B] resize-none"
                   />
                 </div>
 
                 {/* Dual Submit Buttons */}
-                <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 pt-2">
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-1 sm:pt-2">
                   <button
                     type="submit"
-                    className="flex-1 py-3 sm:py-3.5 px-5 bg-[#B84A1B] hover:bg-[#9A3B12] text-[#FFFDF9] font-bold text-xs uppercase tracking-widest rounded transition-colors shadow-lg cursor-pointer text-center"
+                    className="flex-1 py-2.5 sm:py-3.5 px-4 sm:px-5 bg-[#B84A1B] hover:bg-[#9A3B12] text-[#FFFDF9] font-bold text-xs uppercase tracking-widest rounded transition-colors shadow-lg cursor-pointer text-center"
                   >
                     Confirm Table Reservation
                   </button>
                   <button
                     type="button"
                     onClick={handleWhatsAppBooking}
-                    className="py-3 sm:py-3.5 px-5 bg-[#15803D] hover:bg-[#166534] text-white font-bold text-xs uppercase tracking-widest rounded transition-colors shadow flex items-center justify-center gap-2 cursor-pointer"
+                    className="py-2.5 sm:py-3.5 px-4 sm:px-5 bg-[#15803D] hover:bg-[#166534] text-white font-bold text-xs uppercase tracking-widest rounded transition-colors shadow flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer"
                   >
                     <MessageCircle className="w-4 h-4" />
                     <span>Book via WhatsApp</span>
@@ -317,62 +317,62 @@ export function TableReservationHub() {
           </div>
 
           {/* Right 5 Columns: Restaurant Location, Direct Contact & Map */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5 space-y-4 sm:space-y-6">
             {/* Quick Contact & Address Card */}
-            <div className="bg-[#FFFDF9] border border-[#B79754]/30 rounded-2xl p-5 sm:p-8 shadow-md space-y-5 sm:space-y-6">
-              <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#190C06]">
+            <div className="bg-[#FFFDF9] border border-[#B79754]/30 rounded-xl sm:rounded-2xl p-4 sm:p-8 shadow-md space-y-4 sm:space-y-6">
+              <h3 className="font-serif text-lg sm:text-2xl font-bold text-[#190C06]">
                 Visit & Contact Information
               </h3>
 
-              <div className="space-y-3.5 sm:space-y-4 text-xs text-[#58483E]">
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-[#B84A1B]/15 border border-[#B84A1B] flex items-center justify-center text-[#B84A1B] shrink-0 mt-0.5">
-                    <MapPin className="w-4 h-4" />
+              <div className="space-y-3 sm:space-y-4 text-xs text-[#58483E]">
+                <div className="flex items-start gap-2.5 sm:gap-3">
+                  <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-[#B84A1B]/15 border border-[#B84A1B] flex items-center justify-center text-[#B84A1B] shrink-0 mt-0.5">
+                    <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#190C06] uppercase tracking-wider text-[11px] mb-0.5">
+                    <h4 className="font-bold text-[#190C06] uppercase tracking-wider text-[10px] sm:text-[11px] mb-0.5">
                       Restaurant Location
                     </h4>
-                    <p className="leading-relaxed">
+                    <p className="leading-relaxed text-[11px] sm:text-xs">
                       RB Surya Prasad Rd, Chowk, Badi Khanjarpur, Bhagalpur, Bihar 812001
                     </p>
-                    <p className="text-[10px] sm:text-[11px] text-[#58483E]/80 mt-0.5">
+                    <p className="text-[9px] sm:text-[11px] text-[#58483E]/80 mt-0.5">
                       (Near the central marketplace; easy car & 2-wheeler parking)
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 border-t border-[#B79754]/20 pt-3.5">
-                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-[#15803D]/15 border border-[#15803D] flex items-center justify-center text-[#15803D] shrink-0 mt-0.5">
-                    <Clock className="w-4 h-4" />
+                <div className="flex items-start gap-2.5 sm:gap-3 border-t border-[#B79754]/20 pt-3">
+                  <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-[#15803D]/15 border border-[#15803D] flex items-center justify-center text-[#15803D] shrink-0 mt-0.5">
+                    <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#190C06] uppercase tracking-wider text-[11px] mb-0.5">
+                    <h4 className="font-bold text-[#190C06] uppercase tracking-wider text-[10px] sm:text-[11px] mb-0.5">
                       Kitchen & Dine-In Hours
                     </h4>
-                    <p className="leading-relaxed">
+                    <p className="leading-relaxed text-[11px] sm:text-xs">
                       Monday to Sunday: <strong>11:00 AM – 11:00 PM</strong>
                     </p>
-                    <p className="text-[10px] sm:text-[11px] text-[#15803D] font-medium mt-0.5">
+                    <p className="text-[9px] sm:text-[11px] text-[#15803D] font-medium mt-0.5">
                       Open all 7 days including holidays & festival evenings.
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 border-t border-[#B79754]/20 pt-3.5">
-                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-[#B79754]/20 border border-[#B79754] flex items-center justify-center text-[#190C06] shrink-0 mt-0.5">
-                    <Phone className="w-4 h-4" />
+                <div className="flex items-start gap-2.5 sm:gap-3 border-t border-[#B79754]/20 pt-3">
+                  <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-[#B79754]/20 border border-[#B79754] flex items-center justify-center text-[#190C06] shrink-0 mt-0.5">
+                    <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#190C06] uppercase tracking-wider text-[11px] mb-0.5">
+                    <h4 className="font-bold text-[#190C06] uppercase tracking-wider text-[10px] sm:text-[11px] mb-0.5">
                       Hotline & Enquiries
                     </h4>
-                    <p className="font-mono text-sm font-bold text-[#190C06]">
+                    <p className="font-mono text-xs sm:text-sm font-bold text-[#190C06]">
                       <a href="tel:+919876543210" className="hover:text-[#B84A1B]">
                         +91 98765 43210
                       </a>
                     </p>
-                    <p className="text-[10px] sm:text-[11px] text-[#58483E]/80 mt-0.5">
+                    <p className="text-[9px] sm:text-[11px] text-[#58483E]/80 mt-0.5">
                       hello@desichulha.com
                     </p>
                   </div>
@@ -380,10 +380,10 @@ export function TableReservationHub() {
               </div>
 
               {/* Action buttons */}
-              <div className="grid grid-cols-2 gap-2.5 sm:gap-3 pt-2 border-t border-[#B79754]/20">
+              <div className="grid grid-cols-2 gap-2 sm:gap-3 pt-1 sm:pt-2 border-t border-[#B79754]/20">
                 <a
                   href="tel:+919876543210"
-                  className="py-2.5 sm:py-3 px-2 rounded bg-[#190C06] text-[#FFFDF9] text-xs font-bold uppercase tracking-wider text-center hover:bg-[#B84A1B] transition-colors"
+                  className="py-2 sm:py-3 px-2 rounded bg-[#190C06] text-[#FFFDF9] text-xs font-bold uppercase tracking-wider text-center hover:bg-[#B84A1B] transition-colors"
                 >
                   Call
                 </a>
@@ -391,7 +391,7 @@ export function TableReservationHub() {
                   href="https://wa.me/919876543210"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-2.5 sm:py-3 px-2 rounded bg-[#15803D] text-white text-xs font-bold uppercase tracking-wider text-center hover:bg-[#166534] transition-colors flex items-center justify-center gap-1.5"
+                  className="py-2 sm:py-3 px-2 rounded bg-[#15803D] text-white text-xs font-bold uppercase tracking-wider text-center hover:bg-[#166534] transition-colors flex items-center justify-center gap-1.5"
                 >
                   <MessageCircle className="w-3.5 h-3.5" />
                   <span>WhatsApp</span>

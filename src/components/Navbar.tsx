@@ -73,8 +73,8 @@ export function Navbar() {
       <motion.header
         className={`sticky top-0 w-full z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-[#190C06]/95 backdrop-blur-md shadow-xl border-b border-[#B79754]/30 py-2.5 sm:py-3"
-            : "bg-[#190C06]/85 backdrop-blur-sm border-b border-[#B79754]/15 py-3 sm:py-4"
+            ? "bg-[#190C06]/95 backdrop-blur-md shadow-xl border-b border-[#B79754]/30 py-2 sm:py-2.5 md:py-3"
+            : "bg-[#190C06]/85 backdrop-blur-sm border-b border-[#B79754]/15 py-2.5 sm:py-3 md:py-3.5"
         }`}
       >
         <nav className="flex justify-between items-center px-3 sm:px-6 lg:px-12 w-full max-w-7xl mx-auto">
@@ -84,12 +84,12 @@ export function Navbar() {
               <img
                 src={logoImg}
                 alt="Desi Chulha Logo"
-                className="w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full border border-[#B79754]/50 object-cover shadow-md group-hover:scale-105 transition-transform"
+                className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full border border-[#B79754]/50 object-cover shadow-md group-hover:scale-105 transition-transform"
               />
-              <span className="absolute -bottom-1 -right-1 text-[10px] sm:text-xs">🔥</span>
+              <span className="absolute -bottom-1 -right-1 text-[9px] sm:text-xs">🔥</span>
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="font-serif text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-[#F6F3EC] leading-none group-hover:text-[#FAE88A] transition-colors truncate">
+              <span className="font-serif text-base sm:text-xl md:text-2xl font-bold tracking-tight text-[#F6F3EC] leading-none group-hover:text-[#FAE88A] transition-colors truncate">
                 Desi Chulha
               </span>
               <span className="text-[8px] sm:text-[9px] uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#B79754] font-medium mt-0.5 hidden xs:block truncate">
@@ -124,11 +124,11 @@ export function Navbar() {
           </div>
 
           {/* Right Action Buttons */}
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             {/* Table Reservation Button (Desktop/Tablet) */}
             <a
-              href="#reserve-table"
-              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 text-xs font-bold uppercase tracking-wider text-[#F6F3EC] border border-[#B79754]/60 hover:bg-[#B79754]/20 transition-all rounded-none"
+              href="/#reserve-table"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 text-xs font-bold uppercase tracking-wider text-[#F6F3EC] border border-[#B79754]/60 hover:bg-[#B79754]/20 transition-all rounded-none"
             >
               <span>Book Table</span>
             </a>
@@ -136,7 +136,7 @@ export function Navbar() {
             {/* Order Tray Trigger */}
             <button
               onClick={openCart}
-              className={`flex items-center gap-1.5 sm:gap-2.5 px-2.5 sm:px-4 py-1.5 sm:py-2 text-xs font-bold uppercase tracking-wider rounded-none transition-all cursor-pointer ${
+              className={`flex items-center gap-1.5 sm:gap-2.5 px-2 sm:px-4 py-1.5 sm:py-2 text-xs font-bold uppercase tracking-wider rounded-none transition-all cursor-pointer ${
                 totalCount > 0
                   ? "bg-[#B84A1B] text-[#FFFDF9] shadow-lg hover:bg-[#9A3B12]"
                   : "bg-[#26140B] text-[#F6F3EC] border border-[#B79754]/40 hover:border-[#B79754]"
@@ -144,14 +144,14 @@ export function Navbar() {
               aria-label={`Open Order Tray, ${totalCount} items`}
             >
               <div className="relative">
-                <ShoppingBag className="w-4 h-4" />
+                <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 {totalCount > 0 && (
                   <span className="absolute -top-2.5 -right-2.5 bg-[#FAE88A] text-[#190C06] text-[9px] sm:text-[10px] font-mono font-black w-4 h-4 rounded-full flex items-center justify-center">
                     {totalCount}
                   </span>
                 )}
               </div>
-              <span className="text-[11px] font-mono font-bold sm:hidden">
+              <span className="text-[10px] sm:text-[11px] font-mono font-bold sm:hidden">
                 {totalCount > 0 ? `₹${subtotal}` : "Tray"}
               </span>
               <span className="hidden sm:inline">
@@ -162,7 +162,7 @@ export function Navbar() {
             {/* Mobile Menu Hamburger */}
             <button
               onClick={() => setIsMobileMenuOpen(true)}
-              className="lg:hidden p-1.5 sm:p-2 text-[#F6F3EC] hover:text-[#FAE88A] transition-colors"
+              className="lg:hidden p-1 sm:p-2 text-[#F6F3EC] hover:text-[#FAE88A] transition-colors"
               aria-label="Open Mobile Menu"
             >
               <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -179,29 +179,29 @@ export function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 250 }}
-            className="fixed inset-0 z-[70] bg-[#190C06] text-[#F6F3EC] flex flex-col justify-between p-5 sm:p-8 md:p-12 overflow-y-auto"
+            className="fixed inset-0 z-[70] bg-[#190C06] text-[#F6F3EC] flex flex-col justify-between p-4 sm:p-8 md:p-12 overflow-y-auto"
           >
             {/* Top Close */}
-            <div className="flex items-center justify-between border-b border-[#B79754]/20 pb-4">
-              <div className="flex items-center gap-3">
+            <div className="flex items-center justify-between border-b border-[#B79754]/20 pb-3 sm:pb-4">
+              <div className="flex items-center gap-2.5 sm:gap-3">
                 <img
                   src={logoImg}
                   alt="Desi Chulha"
-                  className="w-10 h-10 rounded-full border border-[#B79754]"
+                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[#B79754]"
                 />
-                <span className="font-serif text-xl font-bold">Desi Chulha</span>
+                <span className="font-serif text-lg sm:text-xl font-bold">Desi Chulha</span>
               </div>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="p-2 text-[#D1C7B7] hover:text-[#FFFDF9]"
+                className="p-1.5 sm:p-2 text-[#D1C7B7] hover:text-[#FFFDF9]"
                 aria-label="Close Mobile Navigation"
               >
-                <X className="w-7 h-7" />
+                <X className="w-6 h-6 sm:w-7 sm:h-7" />
               </button>
             </div>
 
             {/* Nav Links */}
-            <div className="flex flex-col gap-6 my-8">
+            <div className="flex flex-col gap-4 sm:gap-6 my-5 sm:my-8">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.to}
@@ -212,7 +212,7 @@ export function Navbar() {
                   <NavLink
                     to={link.to}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={mobileLinkClass}
+                    className="text-xl sm:text-2xl font-serif font-bold tracking-wide transition-all duration-300"
                     end={link.to === "/"}
                   >
                     {link.label}
@@ -226,9 +226,9 @@ export function Navbar() {
                 transition={{ delay: 0.25 }}
               >
                 <a
-                  href="#reserve-table"
+                  href="/#reserve-table"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-2xl font-serif font-bold tracking-wide text-[#B79754]"
+                  className="text-xl sm:text-2xl font-serif font-bold tracking-wide text-[#B79754]"
                 >
                   Book a Table ✦
                 </a>
@@ -236,26 +236,26 @@ export function Navbar() {
             </div>
 
             {/* Bottom Contact Details */}
-            <div className="border-t border-[#B79754]/20 pt-5 space-y-4">
+            <div className="border-t border-[#B79754]/20 pt-4 sm:pt-5 space-y-3 sm:space-y-4">
               <button
                 onClick={() => {
                   setIsMobileMenuOpen(false);
                   openCart();
                 }}
-                className="w-full py-3.5 bg-[#B84A1B] text-[#FFFDF9] font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2"
+                className="w-full py-3 sm:py-3.5 bg-[#B84A1B] text-[#FFFDF9] font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2"
               >
                 <ShoppingBag className="w-4 h-4" />
                 <span>Open Order Tray ({totalCount} items)</span>
               </button>
 
-              <div className="text-xs text-[#D1C7B7] space-y-1">
+              <div className="text-[11px] sm:text-xs text-[#D1C7B7] space-y-1">
                 <p className="flex items-center gap-2">
                   <Phone className="w-3.5 h-3.5 text-[#B84A1B]" />
                   <a href="tel:+919876543210" className="hover:text-[#FAE88A]">
                     +91 98765 43210
                   </a>
                 </p>
-                <p className="text-[11px] text-[#D1C7B7]/70">
+                <p className="text-[10px] sm:text-[11px] text-[#D1C7B7]/70">
                   RB Surya Prasad Rd, Chowk, Badi Khanjarpur, Bhagalpur
                 </p>
               </div>

@@ -9,15 +9,15 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative bg-[#140904] text-[#D1C7B7] w-full overflow-hidden border-t border-[#B79754]/30 pb-24 sm:pb-20 md:pb-12">
+    <footer className="relative bg-[#140904] text-[#D1C7B7] w-full overflow-hidden border-t border-[#B79754]/30 pb-20 sm:pb-16 md:pb-12">
       {/* Decorative top brass hairline */}
       <div className="h-px bg-gradient-to-r from-transparent via-[#B79754]/60 to-transparent" />
 
       {/* Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-40 bg-[#B84A1B]/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative z-10 pt-12 sm:pt-16 md:pt-20 pb-6 sm:pb-8 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 pb-10 sm:pb-14 border-b border-[#B79754]/20">
+      <div className="relative z-10 pt-8 sm:pt-14 md:pt-20 pb-4 sm:pb-8 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-10 lg:gap-12 pb-6 sm:pb-12 border-b border-[#B79754]/20">
           
           {/* Brand Info (Cols 1-5) */}
           <div className="lg:col-span-5 space-y-3 sm:space-y-4">
